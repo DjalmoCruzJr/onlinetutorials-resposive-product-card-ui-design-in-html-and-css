@@ -1,14 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
 * {
     margin: 0;
     padding: 0;
 }
 
-body {}
+body {
+    font-family: 'Lato', sans-serif;
+}
 
-.card {}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100vh;
+    background: #191D32;
+}
 
-.card-header {}
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 500px;
+    background: #fff;
+    color: #000;
+}
 
-.card-body {}
+.card-header {
+    position: relative;
+    flex-basis: 50%;
+    background: #006dbc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-.card-footer {}
+.card-header:before {
+    content: 'Nike';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    color: #000;
+    opacity: .1;
+    font-size: 8em;
+    font-weight: 800;
+}
+
+.card-header img {
+    position: relative;
+    max-width: 150%;
+    max-height: 100%;
+    transform: rotate(30deg);
+    right: -50px;
+}
+
+.card-body {
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 20px 50px;
+}
+
+.card-body .details {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 2;
+}
+
+.card-body .details h1 {
+    line-height: .6em;
+    font-size: 2em;
+    color: #444;
+    font-weight: bold;
+}
+
+.card-body .details h4 {
+    line-height: .6em;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.card-body .details p {
+    text-align: left;
+}
+
+.card-body .card-footer {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.card-body .card-footer h3 {
+    color: #a2a2a2;
+    font-weight: bold;
+}
+
+.card-body .card-footer button {
+    background: #006dbc;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+@media (max-width: 720px) {
+    .container {
+        background: #fff;
+        align-items: flex-start;
+    }
+    .card {
+        width: 100% !important;
+    }
+    .card-header {
+        flex-basis: 100%;
+        position: relative;
+    }
+    .card-header img {
+        max-width: 80%;
+        position: relative;
+    }
+    .card-body {
+        flex-basis: 100%;
+    }
+    .card-body .details h1 {
+        margin-bottom: 20px;
+    }
+    .card-body .details h4 {
+        margin-bottom: 20px;
+    }
+    .card-body .card-footer {
+        margin-top: 40px;
+    }
+}
